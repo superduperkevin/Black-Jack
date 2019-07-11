@@ -19,12 +19,12 @@ for (let i = 0; i < suitArr.length; i++) {
 function blackJack() {
   const dealer = {
     hand: [],
-    value: [],
+    value: 0,
   };
 
   const player = {
     hand: [],
-    value: [],
+    value: 0,
   };
 
   // Generating random card and putting it into each hand.
@@ -41,28 +41,28 @@ function blackJack() {
   const playercard1 = player.hand[0];
   const playercard2 = player.hand[1];
 
-  player.value.push(playercard1.value + playercard2.value);
+  player.value = playercard1.value + playercard2.value;
 
   const dealercard1 = dealer.hand[0];
   const dealercard2 = dealer.hand[1];
 
-  dealer.value.push(dealercard1.value + dealercard2.value);
+  dealer.value = dealercard1.value + dealercard2.value;
 
   //   console.log(`Dealer Hand: ${dealer.value}`);
   //   console.log(`Player Hand: ${player.value}`);
 
   if (dealer.value > player.value) {
     console.log('Dealer Wins!!!');
-    console.log(`Dealer Hand: ${dealer.value}`);
-    console.log(`Player Hand: ${player.value}`);
+    console.log(`Dealer Hand: ${dealer.hand[0].value} and ${dealer.hand[1].value} total : ${dealer.value}`);
+    console.log(`Player Hand: ${player.hand[0].value} and ${player.hand[1].value} total : ${player.value}`);
   } else if (player.value > dealer.value) {
     console.log('Player Wins!!!');
-    console.log(`Dealer Hand: ${dealer.value}`);
-    console.log(`Player Hand: ${player.value}`);
+    console.log(`Dealer Hand: ${dealer.hand[0].value} and ${dealer.hand[1].value} total : ${dealer.value}`);
+    console.log(`Player Hand: ${player.hand[0].value} and ${player.hand[1].value} total : ${player.value}`);
   } else if (player.value === dealer.value) {
     console.log('Tie...');
-    console.log(`Dealer Hand: ${dealer.value}`);
-    console.log(`Player Hand: ${player.value}`);
+    console.log(`Dealer Hand: ${dealer.hand[0].value} and ${dealer.hand[1].value} total : ${dealer.value}`);
+    console.log(`Player Hand: ${player.hand[0].value} and ${player.hand[1].value} total : ${player.value}`);
   }
 }
 
