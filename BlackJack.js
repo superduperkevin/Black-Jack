@@ -3,6 +3,13 @@
 //   this.value = value || 0;
 // }
 
+// class CardHolder (
+//     constructor() {
+//         this.hand = [];
+//         this.value = 0;
+//     }
+// )
+
 const suitArr = ['♠', '🖤', '🍀', '♦'];
 const valueArr = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11];
 const deck = [];
