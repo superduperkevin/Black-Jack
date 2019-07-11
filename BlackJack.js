@@ -37,7 +37,6 @@ function blackJack() {
   for (let looper = 0; looper < 2; looper++) {
     dealer.hand.push(deck[Math.floor(Math.random() * deck.length)]);
   }
-
   const playercard1 = player.hand[0];
   const playercard2 = player.hand[1];
 
@@ -48,22 +47,34 @@ function blackJack() {
 
   dealer.value = dealercard1.value + dealercard2.value;
 
-  //   console.log(`Dealer Hand: ${dealer.value}`);
-  //   console.log(`Player Hand: ${player.value}`);
-
-  if (dealer.value > player.value) {
-    console.log('Dealer Wins!!!');
-    console.log(`Dealer Hand: ${dealer.hand[0].value} and ${dealer.hand[1].value} total : ${dealer.value}`);
-    console.log(`Player Hand: ${player.hand[0].value} and ${player.hand[1].value} total : ${player.value}`);
-  } else if (player.value > dealer.value) {
-    console.log('Player Wins!!!');
-    console.log(`Dealer Hand: ${dealer.hand[0].value} and ${dealer.hand[1].value} total : ${dealer.value}`);
-    console.log(`Player Hand: ${player.hand[0].value} and ${player.hand[1].value} total : ${player.value}`);
-  } else if (player.value === dealer.value) {
-    console.log('Tie...');
-    console.log(`Dealer Hand: ${dealer.hand[0].value} and ${dealer.hand[1].value} total : ${dealer.value}`);
-    console.log(`Player Hand: ${player.hand[0].value} and ${player.hand[1].value} total : ${player.value}`);
+  function handleDisplay() {
+    if (dealer.value > player.value) {
+      console.log('Dealer WINS !!!');
+      console.log(
+        `Dealer Hand: ${dealer.hand[0].value} and ${dealer.hand[1].value}\n Total : ${dealer.value}`
+      );
+      console.log(
+        `Player Hand: ${player.hand[0].value} and ${player.hand[1].value}\n Total : ${player.value}`
+      );
+    } else if (player.value > dealer.value) {
+      console.log('Player WINS !!!');
+      console.log(
+        `Dealer Hand: ${dealer.hand[0].value} and ${dealer.hand[1].value}\n Total : ${dealer.value}`
+      );
+      console.log(
+        `Player Hand: ${player.hand[0].value} and ${player.hand[1].value}\n Total : ${player.value}`
+      );
+    } else if (player.value === dealer.value) {
+      console.log('Tie...');
+      console.log(
+        `Dealer Hand: ${dealer.hand[0].value} and ${dealer.hand[1].value}\n Total : ${dealer.value}`
+      );
+      console.log(
+        `Player Hand: ${player.hand[0].value} and ${player.hand[1].value}\n Total : ${player.value}`
+      );
+    }
   }
+  handleDisplay();
 }
 
 blackJack();
