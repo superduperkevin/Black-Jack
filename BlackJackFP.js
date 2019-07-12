@@ -1,5 +1,6 @@
 /* eslint-disable prefer-const */
 function game() {
+  console.log('=============Welcome to BlackJack!===============');
   function createDeck() {
     const tempDeck = [];
     // Deck generator function
@@ -60,48 +61,19 @@ function game() {
 
   function scoreCalculator() {
     let result = [];
-    const playerScore = playerHandGenerator()[0].value + playerHandGenerator;
-    const dealerScore = dealerHandGenerator()[0].value;
-    // playerHand[0].value;
-    if (playerScore > dealerScore) {
-      console.log();
+    result.push(playerHand[0].value + playerHand[1].value);
+    console.log(`Player: ${result}`);
+    result.push(dealerHand[0].value + dealerHand[1].value);
+    console.log(`Dealer: ${result[1]}`);
+    if (result[0] > result[1]) {
+      return console.log('Player Wins !!!');
     }
+    if (result[0] < result[1]) {
+      return console.log('Dealer wins !!!');
+    }
+    return console.log('Tie...');
   }
-  //   function dealCard() {
-  //     return tempDeck.pop();
-  //   }
-
-  //   let result = scoreCalculator();
-  //   function handleDisplay() {
-  //     // let result = [];
-  //     if (dealer.value > player.value) {
-  //       console.log('Dealer WINS !!!');
-  //       console.log(
-  //         `Dealer Hand: ${dealer.hand[0].value} and ${dealer.hand[1].value}\n Total : ${dealer.value}`
-  //       );
-  //       console.log(
-  //         `Player Hand: ${playerHand[0].value} and ${player.hand[1].value}\n Total : ${player.value}`
-  //       );
-  //     } else if (player.value > dealer.value) {
-  //       console.log('Player WINS !!!');
-  //       console.log(
-  //         `Dealer Hand: ${dealer.hand[0].value} and ${dealer.hand[1].value}\n Total : ${dealer.value}`
-  //       );
-  //       console.log(
-  //         `Player Hand: ${player.hand[0].value} and ${player.hand[1].value}\n Total : ${player.value}`
-  //       );
-  //     } else if (player.value === dealer.value) {
-  //       console.log('Tie...');
-  //       console.log(
-  //         `Dealer Hand: ${dealer.hand[0].value} and ${dealer.hand[1].value}\n Total : ${dealer.value}`
-  //       );
-  //       console.log(
-  //         `Player Hand: ${player.hand[0].value} and ${player.hand[1].value}\n Total : ${player.value}`
-  //       );
-  //     }
-  //   }
-  //   let result = handleDisplay();
-  console.log(playerHand[0].value);
+  scoreCalculator();
 }
 
 game();
